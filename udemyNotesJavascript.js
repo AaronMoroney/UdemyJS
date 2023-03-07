@@ -103,6 +103,7 @@ if (katherine >= 18) {
 ** |  Section 20 - Type conversion
 */
 
+/*
 //type comversion
 const inputYear = `2000`;
 console.log(Number(inputYear));
@@ -125,17 +126,18 @@ let n = '1' + 1;
 n = n - 1;
 console.log(n);
 //produces 10
-
-/*
-** |  Section 21 - Type conversion
 */
 
+/*
+** |  Section 22 - truthy & falsy vals
+*/
+
+/*
 console.log(Boolean(0));
 console.log(Boolean(undefined));
 console.log(Boolean('jonas'));
 console.log(Boolean({}));
 console.log(Boolean(''));
-
 //here, 0 will be flase
 const money = 0;
 if(money) {
@@ -143,3 +145,87 @@ if(money) {
 } else {
   console.log('go get a job ya big hippie!')
 }
+*/
+
+/*
+const john = { years: 19,days: 100 }
+function ageCalc(person) {
+   return (person.years *= 365) + person.days
+}
+const OLDENOUGH = (18 * 365);
+
+let gettingIn = ageCalc(john) > OLDENOUGH ? 'gowan' : 'gowan away home'
+console.log(gettingIn);
+*/
+
+/*
+** |  Section 23 - equality operators
+*/
+
+//assignment
+let place = 'ireland';
+let numNeighbours = Number(prompt('how many neighbours does your country have?'));
+console.log(numNeighbours);
+
+if (numNeighbours === 1) {
+  console.log(`there is only one neighbour to ${place}`)
+} else if (numNeighbours > 1) {
+  console.log(`there are ${numNeighbours} next to ${place}`) 
+} else {
+  console.log(`${place} has no neighbours`)
+}
+
+/*
+** |  Section 23 - BOOLEAN LOGIC
+*/
+
+// || = or, ! =  not, && = and
+
+const hasDriversLicence = true;
+const isTired = true;
+const hasGoodVision = true;
+
+if (hasDriversLicence && !isTired && hasGoodVision) {
+  console.log('aaron can drive')
+} else {
+  console.log('aaron should sleep')
+}
+
+/*
+** | coding challenge, 3 
+*/
+
+const teams = [
+    { name: 'dolphins', scores: [96, 108, 89] },
+    { name: 'koalas', scores: [88, 91, 110] }
+  ];
+  
+  function calculateAverage(scores) {
+    //adds the values of an array in a string
+    const sum = scores.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    const teamAverage = sum / scores.length;
+    return teamAverage;
+  }
+  
+  function determineWinner(teams, minScore) {
+    const scores = teams.map((team) => calculateAverage(team.scores));
+    const highestScore = Math.max(...scores);
+  
+    if (highestScore < minScore) {
+      console.log('There is no winner!');
+      return;
+    }
+  
+    const winners = teams.filter((team) => calculateAverage(team.scores) === highestScore);
+    if (winners.length === 1) {
+      console.log(`${winners[0].name} is the winner with a score of ${highestScore}!`);
+    } else {
+      console.log(`It's a tie between: ${winners.map((winner) => `${winner.name} with a score of ${highestScore}`).join(', ')}`);
+    }
+  }
+  
+  determineWinner(teams, 90);
+
+
+
+
