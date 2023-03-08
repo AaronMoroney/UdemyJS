@@ -56,7 +56,7 @@ console.log(ageJonas, ageSarah, averageAge);
 /*
 ** |  coding exercise one, dynamic + scalable. 
 */
-
+// if we want to assign a value to a variable with if / else we first need to do it outside the if/else block
 /*
 
 function calculateBMI(person) {
@@ -195,6 +195,7 @@ if (hasDriversLicence && !isTired && hasGoodVision) {
 ** | coding challenge, 3 
 */
 
+/*
 const teams = [
     { name: 'dolphins', scores: [96, 108, 89] },
     { name: 'koalas', scores: [88, 91, 110] }
@@ -225,7 +226,46 @@ const teams = [
   }
   
   determineWinner(teams, 90);
+*/
+
+/*
+** | section 26 
+*/
+
+const plan = 'get new job';
+//quit, stay, get new job
+//to test the equality of a variable against several values specified in the test cases.
+switch (plan) {
+  case 'quit dunnes':
+    console.log('be broke');
+    break;
+  case 'stay' :
+    console.log('financial security');
+    console.log('but very bored');
+    break;
+  case 'get new job' :
+    console.log('be interested & engaged!🤘');
+    break;
+  default:
+    console.log(`you're ignoring the proble`);
+}
+
+/*
+** | section 28
+*/
+
+const age = 19;
+//because tern operator prooduces an expression(produces a value, we can use it in a temp literal)
+const drink = age >= 19 ? ('wine') : (' kombucha');
+console.log(`i like to drink ${drink}`);
+//tern op perfect for quick decisions
 
 
+/*
+** | coding challenge 4
+*/
 
+let value = 430;
 
+let tip = value <= 300 && value >= 50 ? value * 0.15 : value * 0.20 ;
+console.log(`The bill was ${value}, the tip was ${tip} , and the total value was ${value + tip}`);
